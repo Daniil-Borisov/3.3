@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3.3</title>
+</head>
+<body>
+	<script>
+		function factorial(item){
+			if (item < 0) {
+				return
+			}
+			var factorial = 1;
+			for (var i = 1; i <= item; i++){
+				factorial *= i;
+			}
+			console.log(factorial)
+		}
+
+		function fibonachi (item){
+			var fibonachi = [0, 1];
+			if (item <= 2) {
+				fibonachi.length = item;
+				return fibonachi;
+			}
+			for (var i = 2; i < item; i++){
+				fibonachi[i] = fibonachi[i-2] + fibonachi[i-1]; 
+			}
+			console.log(fibonachi);
+		} 
+
+		function palindrom(item) {
+			var arr = [];
+			arr = item.toLowerCase().split('');
+			count = 0;
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i] == arr.reverse()[i]) {
+					count += 1
+				}
+			}
+			if (count == arr.length){
+				console.log("true")
+			}
+			else {
+				console.log("false")
+			}
+		}
+
+		function anagramma (item1, item2) {
+			var arr1 = item1.toLowerCase().split('');
+			var arr2 = item2.toLowerCase().split('');
+			if (arr1.length != arr2.length){
+				return console.log("false");
+			}
+			var count = 0;
+			arr1.forEach(function(el){
+				if(arr2.includes(el)){
+					count += 1;
+				}
+			})
+
+			if (count == arr1.length){
+				console.log("true");
+			}
+			else {
+				console.log("false");
+			}
+		}
+
+		function diffDays (date1, date2) {
+			date1 = date1.split('.');
+			date2 = date2.split('.');
+			date1 = new Date (date1[2], date1[1] - 1, date1[0])
+			date2 = new Date (date2[2], date2[1] - 1, date2[0])
+			var diff = (date2 - date1)/(3600 * 24 * 1000);
+			console.log(diff)
+		}
+
+		function ticket(item) {
+			var arr1 = (item + "").split("");
+			var arr2 = arr1.splice(3, 6);
+			sum1 = arr1.reduce(function(s, el){
+				return s + (+el)
+			}, 0);
+			sum2 = arr2.reduce(function(s, el){
+				return s + (+el)
+			}, 0);
+
+			if (sum1 == sum2){
+				console.log("lucky ticket");
+			} else {
+				console.log("unlucky ticket");
+			}			
+		}
+
+		function sumLastNumber(m, n) {
+			var arr1 = (m + "").split("");
+			var arr2 = arr1.slice(-n);
+			sum = arr2.reduce(function(s, el){
+				return s + (+el)
+			}, 0);
+			console.log(sum)
+		}
+
+		function znak(item) {
+			var count = 1;
+			for (var i = 1; i < item.length; i++) {
+				if (((item[i] >= 0) && (item[i - 1] < 0)) || (item[i] < 0 && item[i - 1] >= 0)){
+					count++
+				} 
+			}
+			console.log(count)
+		}
+
+		function sortNum(item) {
+			for (var i = 0; i < item.length - 1; i++){
+				if (item[i] < item[i + 1]){
+					continue
+				} else {
+					console.log(false);
+					break
+				}
+			}
+			if (i == item.length - 1){
+					console.log(true);
+			}
+		}
+
+		//Решение задачи по возрастанию и убыванию
+
+		function sortStr(item) {
+			item = item.join('').toLowerCase().split('');
+			for (var i = 0; i < item.length - 1; i++){
+				if (item[i] < item[i + 1]){
+					continue
+				} else {
+					break
+				}
+			}
+			for (var j = 0; j < item.length - 1; j++){
+				if (item[j] > item[j + 1]){
+					continue
+				} else {
+					break
+				}
+			}
+			if ((i == item.length - 1) || (j == item.length - 1)){
+					console.log(true);
+			} else {
+				console.log (false);
+			}
+		}
+
+		function reverseArr(item) {
+			var arr = [];
+			for (var i = item.length - 1; i >= 0; i--) {
+				arr.push(item[i]);
+			}
+			console.log(arr)
+		}
+
+		function piramida (){
+			for (var i = 1; i < 10; i++){
+				var piramida = ''
+				for (var j = 0; j < i; j++){
+					piramida += i;
+				}
+				console.log(piramida);
+			}
+		}
+
+		function sumArr(item) {
+			var sum = 0;
+			item.map(function(el){
+				el = el.reduce(function(s, el){
+				return s + el}, 0)
+				sum += el;
+			})
+			console.log(sum)
+		}
+
+		function years() {
+			var years = [];
+			for (var i = 1; i <= 2020; i++){
+				var arr = (i + "").split('');
+				if  (13 == arr.reduce(function(s, el){
+				return s + (+el)}, 0)){
+					years.push(i);
+				}			
+			}
+			console.log(years);
+		}
+
+		function varTextHello() {
+			str = 'var_text_hello';
+			var arr = str.split('_');
+			for (var i = 1; i < arr.length; i++){
+				var temp = arr[i].split('');
+				temp[0] = temp[0].toUpperCase();
+				arr[i] = temp.join('')
+			}
+			str = arr.join('');
+			console.log(str);
+		}
+
+		function numbersSum(item) {
+			var arr = (item + "").split('');
+			do {
+				sum = arr.reduce(function(s, el){
+				return s + (+el)
+				}, 0);
+				arr = (sum + "").split('');
+				console.log(sum)
+			} while (sum > 9)
+		}
+
+	</script>
+</body>
+</html>
+
+
+
