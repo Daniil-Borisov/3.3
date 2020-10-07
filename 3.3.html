@@ -31,7 +31,7 @@
 		function palindrom(item) {
 			let arr = [];
 			arr = item.toLowerCase().split('');
-			count = 0;			
+			let count = 0;			
 			for (let i = 0; i < arr.length; i++) {
 				if (arr[i] === arr.reverse()[i]) {
 					count += 1
@@ -41,8 +41,8 @@
 		}
 
 		function anagramma (item1, item2) {
-			let arr1 = item1.toLowerCase().split('');
-			let arr2 = item2.toLowerCase().split('');
+			const arr1 = item1.toLowerCase().split('');
+			const arr2 = item2.toLowerCase().split('');
 			if (arr1.length != arr2.length){
 				return console.log("false");
 			}
@@ -71,7 +71,7 @@
 		}
 	
 		function ticket(item) {
-			let arr1 = (item + "").split("");
+			const arr1 = (item + "").split("");
 			let arr2 = arr1.splice(3, 6);
 			sum1 = arr1.reduce(function(s, el){
 				return s + (+el)
@@ -84,7 +84,7 @@
 		}
 
 		function sumLastNumber(m, n) {
-			let arr1 = (m + "").split("");
+			const arr1 = (m + "").split("");
 			let arr2 = arr1.slice(-n);
 			sum = arr2.reduce(function(s, el){
 				return s + (+el)
@@ -188,7 +188,7 @@
 
 		function letTextHello() {
 			str = 'let_text_hello';
-			let arr = str.split('_');
+			const arr = str.split('_');
 			for (let i = 1; i < arr.length; i++){
 				let temp = arr[i].split('');
 				temp[0] = temp[0].toUpperCase();
@@ -199,7 +199,7 @@
 		}
 
 		function numbersSum(item) {
-			let arr = (item + "").split('');
+			const arr = (item + "").split('');
 			let sum = arr.reduce(function(s, el){
 				return s + (+el)
 				}, 0);
