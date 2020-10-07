@@ -17,7 +17,7 @@
 		}
 
 		function fibonachi (item){
-			let fibonachi = [0, 1];
+			const fibonachi = [0, 1];
 			if (item <= 2) {
 				fibonachi.length = item;
 				return fibonachi;
@@ -72,7 +72,7 @@
 	
 		function ticket(item) {
 			const arr1 = (item + "").split("");
-			let arr2 = arr1.splice(3, 6);
+			const arr2 = arr1.splice(3, 6);
 			sum1 = arr1.reduce(function(s, el){
 				return s + (+el)
 			}, 0);
@@ -85,7 +85,7 @@
 
 		function sumLastNumber(m, n) {
 			const arr1 = (m + "").split("");
-			let arr2 = arr1.slice(-n);
+			const arr2 = arr1.slice(-n);
 			sum = arr2.reduce(function(s, el){
 				return s + (+el)
 			}, 0);
@@ -145,7 +145,7 @@
 		}
 
 		function reverseArr(item) {
-			let arr = [];
+			const arr = [];
 			for (let i = item.length - 1; i >= 0; i--) {
 				arr.push(item[i]);
 			}
@@ -174,7 +174,7 @@
 		}
 
 		function years() {
-			let years = [];
+			const years = [];
 			let i = 1;
 			for (; i <= 2020; i++){
 				let arr = (i + "").split('');
